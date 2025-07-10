@@ -1,0 +1,21 @@
+name: 🔨 Test & Coverage
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+    runs-on: ubunto-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.24"
+
+      - name: Test
+        run: go test ./... -race -coverprofile=./log/coverage.out -covermode=atomic
