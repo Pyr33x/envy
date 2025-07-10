@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/alecthomas/assert/v2"
-	"github.com/pyr33x/envy/envy"
+	"github.com/pyr33x/envy"
 )
 
 func TestGetString(t *testing.T) {
