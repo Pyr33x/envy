@@ -1,5 +1,4 @@
 # Envy
----
 Typed and fallback-safe environment variables access in Go
 
 ## Install
