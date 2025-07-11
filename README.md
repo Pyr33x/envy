@@ -31,7 +31,7 @@ func main() {
 	fmt.Println(b) // true (fallback)
 
 	f := envy.GetFloat64("B", 10.5)
-	fmt.Println(f) // 10.5 (fallback`)
+	fmt.Println(f) // 10.5 (fallback)
 
 	u := envy.GetUint64("C", 10)
 	fmt.Println(u) // 10 (fallback)
