@@ -26,7 +26,7 @@ func TestGetFloat32(t *testing.T) {
 	})
 }
 
-func MustGetFloat32(t *testing.T) {
+func TestMustGetFloat32(t *testing.T) {
 	envValue := "12.5"
 
 	t.Run("MustGetNonExistingFloat32", func(t *testing.T) {
