@@ -7,6 +7,7 @@ import (
 	er "github.com/pyr33x/envy/pkg/err"
 )
 
+// Returns float32 value from env. If key is not set, it returns the fallback.
 func GetFloat32(key string, fallback float32) float32 {
 	value, ok := os.LookupEnv(key)
 	if !ok {
@@ -21,6 +22,7 @@ func GetFloat32(key string, fallback float32) float32 {
 	return float32(result)
 }
 
+// Returns float32 value from env. If key is not set, it will panic.
 func MustGetFloat32(key string) float32 {
 	value, ok := os.LookupEnv(key)
 	if !ok {
