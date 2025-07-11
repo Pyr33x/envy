@@ -28,16 +28,16 @@ import (
 
 func main() {
 	b := envy.GetBool("A", true)
-	fmt.Println(b) // true (fallback)
+	fmt.Println(b) // returns value from env | if not set *true* (fallback)
 
 	f := envy.GetFloat64("B", 10.5)
-	fmt.Println(f) // 10.5 (fallback)
+	fmt.Println(f) // returns value from env | if not set *10.5* (fallback)
 
 	u := envy.GetUint64("C", 10)
-	fmt.Println(u) // 10 (fallback)
+	fmt.Println(u) // returns value from env | if not set *10* (fallback)
 
 	s := envy.GetString("D", "yo")
-	fmt.Println(s) // yo (fallback)
+	fmt.Println(s) // returns value from env | if not set *yo* (fallback)
 }
 ```
 
