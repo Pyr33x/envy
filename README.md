@@ -27,17 +27,17 @@ import (
 )
 
 func main() {
-		b := envy.GetBool("A", true)
-		fmt.Println(b) // true (fallback)
+	b := envy.GetBool("A", true)
+	fmt.Println(b) // true (fallback)
 
-		f := envy.GetFloat64("B", 10.5)
-		fmt.Println(f) // 10.5 (fallback`)
+	f := envy.GetFloat64("B", 10.5)
+	fmt.Println(f) // 10.5 (fallback`)
 
-		u := envy.GetUint64("C", 10)
-		fmt.Println(u) // 10 (fallback)
+	u := envy.GetUint64("C", 10)
+	fmt.Println(u) // 10 (fallback)
 
-		s := envy.GetString("D", "yo")
-		fmt.Println(s) // yo (fallback)
+	s := envy.GetString("D", "yo")
+	fmt.Println(s) // yo (fallback)
 }
 ```
 
@@ -52,10 +52,10 @@ import (
 )
 
 func main() {
-		s := envy.MustGetString("A")
-		fmt.Println(s) // returns env value in string (exists)
+	s := envy.MustGetString("A")
+	fmt.Println(s) // returns env value in string (exists)
 
-		s = envy.MustGetString("T")
-		fmt.Println(s) // panics, because key has not been set
+	s = envy.MustGetString("T")
+	fmt.Println(s) // panics, because key has not been set
 }
 ```
