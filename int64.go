@@ -22,7 +22,7 @@ func GetInt64(key string, fallback int64) int64 {
 	return int64(result)
 }
 
-// Returns int8 value from env. If key is not set, it will panic.
+// Returns int64 value from env. If key is not set, it will panic.
 func MustGetInt64(key string) int64 {
 	value, ok := os.LookupEnv(key)
 	if !ok {
