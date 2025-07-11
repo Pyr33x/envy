@@ -11,3 +11,51 @@ Typed and fallback-safe environment variables access in Go
 ```sh
 go get github.com/pyr33x/envy
 ```
+
+## Usage
+Make sure you've [loaded](https://github.com/joho/godotenv) your environment variables.
+
+### With Fallback
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/pyr33x/envy"
+)
+
+func main() {
+		b := envy.GetBool("A", true)
+		fmt.Println(b) // true (fallback)
+
+		f := envy.GetFloat64("B", 10.5)
+		fmt.Println(f) // 10.5 (fallback`)
+
+		u := envy.GetUint64("C", 10)
+		fmt.Println(u) // 10 (fallback)
+
+		s := envy.GetString("D", "yo")
+		fmt.Println(s) // yo (fallback)
+}
+```
+
+### Force
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/pyr33x/envy"
+)
+
+func main() {
+		s := envy.MustGetString("A")
+		fmt.Println(s) // returns env value in string (exists)
+
+		s = envy.MustGetString("T")
+		fmt.Println(s) // panics, because key has not been set
+}
+```
