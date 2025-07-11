@@ -3,8 +3,8 @@ package envy_test
 import (
 	"testing"
 
-	"github.com/alecthomas/assert/v2"
 	"github.com/pyr33x/envy"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetString(t *testing.T) {
