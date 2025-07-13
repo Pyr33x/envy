@@ -9,29 +9,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        go: ["1.24"]
-
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: ${{ matrix.go }}
+        uses: actions/setup-go@v5
 
-      - name: Cache Go modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cache/go-build
-            ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
+      - name: Install dependencies
+        run: go mod download
 
-      - name: Test
+      - name: Run tests
         run: go test ./... -race -coverprofile=coverage.txt -covermode=atomic
 
       - name: Upload coverage reports to CodeCov
